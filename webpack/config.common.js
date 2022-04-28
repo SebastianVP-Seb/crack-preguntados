@@ -27,7 +27,7 @@ const loaders = [
     ]
   },
   {
-    test: /\.(png|jpe?g|gif|svg)/,
+    test: /\.(png|jpe?g|gif|svg)$/,
     use: [
       {
         loader: 'file-loader',

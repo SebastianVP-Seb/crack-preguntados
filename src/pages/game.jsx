@@ -5,6 +5,7 @@ import { Card } from '../components/card';
 import { QuestionView } from './QuestionView';
 import { getQuestions } from '@actions/questions.actions';
 import { setCurrentQuestionIndex } from '@actions/gameStatus.action';
+import Loader from '../components/loader';
 
 export const Game = () => {
   const { questionSelectReducer, userReducer, gameStatusReducer } = useSelector(state => state);
@@ -34,10 +35,15 @@ export const Game = () => {
 
   return (
     <Card>
-      {questionSelectReducer?.id ? (
-        <QuestionView nextQuestion={nextQuestion} />
-      ) : <h1>No hay preguntas</h1>}
+      {questionSelectReducer?.id ? (<QuestionView nextQuestion={nextQuestion} />)
+        :
+        (<Loader />)
+      }
+      {/* // ) : (<Loader />)} */}
       {/* {welcomeInit == 0 ? QuestionView : WelcomeView } */}
+      {/* {
+        currentQuestionIndex==10? (<h1>Ya no hay preguntas</h1>) : ('hola')
+      } */}
     </Card>
   )
 }

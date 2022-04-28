@@ -1,0 +1,13 @@
+.welcomeView {
+    // width: 90vw;
+    // height: 90vh;
+    // background-image: url(../assets/boxed-water.jpg);
+    background-color: hotpink;
+    // margin: 1rem 2rem;
+    // padding: 1rem 5rem;
+    // margin-top: 7rem;
+
+    &_title {
+        font-family: $font-welcome !important;
+    }
+}
